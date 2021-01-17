@@ -26,6 +26,7 @@ style before making a merge request. You can also make use of cpplint which is a
 [Build project](https://gitlab.com/ii887522/snake#build-project) section to support you.
 
 ## Prerequisites
+- Windows 10
 - [Docker Desktop](https://www.docker.com/products/docker-desktop) using Windows containers
 - [Visual Studio Code](https://code.visualstudio.com/)
   - C/C++

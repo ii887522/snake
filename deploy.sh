@@ -1,4 +1,0 @@
-docker run --rm --name snake_bundler -w C:/snake/libs -v $PWD:C:/snake mcr.microsoft.com/windows/servercore:20H2 cmd /c "mkdir snake-%1 && cd snake-%1 && xcopy ..\..\snake\Release\ .\ /s /exclude:..\..\.outignore && mkdir res && cd res && mkdir main && cd main && xcopy ..\..\..\..\snake\res\main\ .\ /s && cd .. && cd .. && cd .. && cd .."
-docker run --rm --name snake_zipper -w C:/snake/libs -v $PWD/libs:C:/snake/libs kiazhi/nanoserver.7-zip:1709-18.05 7z a snake-%1.zip snake-%1\
-docker run --rm --name snake_publisher -v $PWD/libs:C:/snake/libs stefanscherer/curl-windows:7.58.0 --header "PRIVATE-TOKEN: %2" --upload-file C:\snake\libs\snake-%1.zip https://gitlab.com/api/v4/projects/23555750/packages/generic/snake/%1/snake-%1.zip
-docker run --rm --name snake_cleaner -w C:/snake/libs -v $PWD/libs:C:/snake/libs mcr.microsoft.com/windows/servercore:20H2 cmd /c "rmdir snake-%1 /s /q && del snake-%1.zip"
