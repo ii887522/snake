@@ -1,6 +1,6 @@
 {
   "name": "snake",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "It is a 2D board game which the snake eats the food to grow itself while trying to avoid hitting obstacles.",
   "scripts": {
     "install": "node build.js"
