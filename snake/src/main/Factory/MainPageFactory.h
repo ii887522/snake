@@ -194,14 +194,16 @@ template <unsigned int viewCount> class MainPageFactory final {
       Button::Builder{ renderer, playButtonPosition, Paint{ Size{ 102, 64 }, Color{ 0u, 0u, 255u } } }
         .setADuration(1u)
         .setLightnessDuration(buttonDuration)
-        .setOnMouseOver([this]() {
+        .setOnMouseMove([this]() {
           SDL_SetCursor(pointer);
         })
+        .setOnMouseOver([]() { })
         .setOnMouseOut([]() {
           SDL_SetCursor(SDL_GetDefaultCursor());
         })
         .setOnClick([this]() {
           currentPath.set(Path::GAME);
+          SDL_SetCursor(SDL_GetDefaultCursor());
         })
         .build(),
       Text::Builder{ renderer, bodyFont, playButtonPosition + buttonPadding, "Play", Color{ 255u, 255u, 255u } }

@@ -208,9 +208,10 @@ template <unsigned int viewCount> class GamePageFactory final {
             .setA(0u)
             .setADuration(modalDuration)
             .setLightnessDuration(buttonDuration)
-            .setOnMouseOver([this]() {
+            .setOnMouseMove([this]() {
               SDL_SetCursor(pointer);
             })
+            .setOnMouseOver([]() {})
             .setOnMouseOut([]() {
               SDL_SetCursor(SDL_GetDefaultCursor());
             })
@@ -227,9 +228,10 @@ template <unsigned int viewCount> class GamePageFactory final {
             .setA(0u)
             .setADuration(modalDuration)
             .setLightnessDuration(buttonDuration)
-            .setOnMouseOver([this]() {
+            .setOnMouseMove([this]() {
               SDL_SetCursor(pointer);
             })
+            .setOnMouseOver([]() {})
             .setOnMouseOut([]() {
               SDL_SetCursor(SDL_GetDefaultCursor());
             })
@@ -254,9 +256,10 @@ template <unsigned int viewCount> class GamePageFactory final {
             .setA(0u)
             .setADuration(modalDuration)
             .setLightnessDuration(buttonDuration)
-            .setOnMouseOver([this]() {
+            .setOnMouseMove([this]() {
               SDL_SetCursor(pointer);
             })
+            .setOnMouseOver([]() {})
             .setOnMouseOut([]() {
               SDL_SetCursor(SDL_GetDefaultCursor());
             })
@@ -273,9 +276,10 @@ template <unsigned int viewCount> class GamePageFactory final {
             .setA(0u)
             .setADuration(modalDuration)
             .setLightnessDuration(buttonDuration)
-            .setOnMouseOver([this]() {
+            .setOnMouseMove([this]() {
               SDL_SetCursor(pointer);
             })
+            .setOnMouseOver([]() {})
             .setOnMouseOut([]() {
               SDL_SetCursor(SDL_GetDefaultCursor());
             })
@@ -291,7 +295,7 @@ template <unsigned int viewCount> class GamePageFactory final {
       },
       // Begin glowing views
       Score::Builder{
-        renderer, bodyFont, Point{ rect.size.w >> 1u, 14 }, static_cast<unsigned int>(getBackgroundCellCount() * .75f), [this]() {
+        renderer, bodyFont, Point{ rect.size.w >> 1u, 14 }, Color{ 255u, 255u, 255u }, static_cast<unsigned int>(getBackgroundCellCount() * .75f), [this]() {
           isWinningModalShowing.set(true);
         }
       }

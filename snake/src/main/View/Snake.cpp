@@ -11,11 +11,13 @@
 #include <functional>
 #include <random>
 #include <stdexcept>
+#include <Any/Enums.h>
 #include "../Any/Enums.h"
 
 using std::function;
 using std::default_random_engine;
 using std::runtime_error;
+using ii887522::viewify::Action;
 
 namespace ii887522::snake {
 
@@ -38,8 +40,9 @@ Snake::Snake(const Builder& builder) : View{ builder.renderer },
   });
 }
 
-void Snake::reactKeyDown(const SDL_KeyboardEvent& keyEvent) {
+Action Snake::reactKeyDown(const SDL_KeyboardEvent& keyEvent) {
   model.reactKeyDown(keyEvent.keysym.sym);
+  return Action::QUIT;
 }
 
 void Snake::step(const unsigned int dt) {
