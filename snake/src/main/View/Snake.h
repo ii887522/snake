@@ -13,6 +13,7 @@
 #include <SDL.h>
 #include <functional>
 #include <random>
+#include <Any/Enums.h>
 #include "../Model/SnakeModel.h"
 #include "../Any/Enums.h"
 
@@ -23,6 +24,7 @@ using ii887522::viewify::Rect;
 using ii887522::nitro::Reactive;
 using ii887522::viewify::Map;
 using ii887522::viewify::Point;
+using ii887522::viewify::Action;
 
 namespace ii887522::snake {
 
@@ -91,7 +93,7 @@ class Snake final : public View {
   explicit Snake(const Builder&);
 
  public:
-  void reactKeyDown(const SDL_KeyboardEvent&) override;
+  Action reactKeyDown(const SDL_KeyboardEvent&) override;
   void step(const unsigned int dt) override;
   void checkAndReactHits(const unsigned int dt) override;
   void render() override;
